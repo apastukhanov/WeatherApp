@@ -23,7 +23,6 @@ public class Coordinates {
     public void getGPSCoordinates(){
         Coordinates coord = getWhereAmICoordinates();
         System.out.println(coord);
-//        return new Coordinates(1.0, 1.0);
     };
 
     private Coordinates getWhereAmICoordinates () {

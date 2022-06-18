@@ -84,8 +84,9 @@ public class Coordinates {
     }
 
     private Coordinates roundCoordinates() {
-
-        return new Coordinates();
+        double latitude = Math.round(this.getLatitude()*100)/100;
+        double longitude = Math.round(this.getLongitude()*100)/100;
+        return new Coordinates(latitude, longitude);
     }
 
     public double getLatitude() {

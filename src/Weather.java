@@ -41,7 +41,10 @@ public class Weather {
                                            double longitude) {
         String url =  String.format(this.env.getEnv("OPENWEATHER_URL"),
                 latitude,
-                longitude);
+                longitude,
+                this.env.getEnv("OPENWEATHER_API"));
+
+        System.out.println(url);
         try {
             JSONObject json =  JsonReader.readJsonFromUrl(url);
             System.out.println(json.toString());
@@ -49,8 +52,6 @@ public class Weather {
         catch (Exception ex) {
             System.out.println(ex.getStackTrace());
         }
-
-
 
         return "";
 

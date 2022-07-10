@@ -14,15 +14,17 @@ public class Coordinates {
     }
 
     Coordinates() {
+
     }
 
     public String toString() {
         return String.format("Coordinates(latitude=%f,longitude=%f)",
                 this.getLatitude(), this.getLongitude());
     }
-    public void getGPSCoordinates(){
+    public Coordinates getGPSCoordinates(){
         Coordinates coord = getWhereAmICoordinates();
-        System.out.println(coord);
+        return new Coordinates(latitude = coord.getLatitude(),
+                longitude = coord.getLongitude());
     };
 
     private Coordinates getWhereAmICoordinates () {
@@ -64,6 +66,7 @@ public class Coordinates {
         Process process = null;
         try {
             process = Runtime.getRuntime().exec("whereami");
+            process.waitFor();
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }

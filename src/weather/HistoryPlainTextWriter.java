@@ -1,5 +1,6 @@
 package weather;
 
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -30,8 +31,8 @@ public class HistoryPlainTextWriter implements HistoryWriter{
             Files.writeString(
                    this.filePath, outputString, CREATE, APPEND
             );
-        } catch (Exception ex){
-            System.out.println(ex.getStackTrace());
+        } catch (IOException ex){
+            ex.printStackTrace();
         }
 
     }

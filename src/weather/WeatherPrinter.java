@@ -1,3 +1,5 @@
+package weather;
+
 import java.text.SimpleDateFormat;
 
 public class WeatherPrinter {

@@ -1,3 +1,4 @@
+package weather;
 
 public class HistoryJsonWriter implements HistoryWriter {
 

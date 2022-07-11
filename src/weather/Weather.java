@@ -1,3 +1,5 @@
+package weather;
+
 import org.json.JSONObject;
 
 import java.sql.Timestamp;
@@ -113,7 +115,7 @@ public class Weather {
     }
 
     public String toString() {
-        return String.format("Weather[%s, %s, %s, %s, %s]",
+        return String.format("weather.Weather[%s, %s, %s, %s, %s]",
                 this.temperature,
                 this.weatherType,
                 this.sunrise,

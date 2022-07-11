@@ -1,3 +1,5 @@
+package weather;
+
 class Celsius {
     private double celsius;
 

@@ -1,6 +1,7 @@
+package weather;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 
 public class Coordinates {
 
@@ -8,17 +9,17 @@ public class Coordinates {
     private double longitude;
 
 
-    Coordinates(double latitude, double longtitude) {
+    public Coordinates(double latitude, double longtitude) {
         this.latitude=latitude;
         this.longitude=longtitude;
     }
 
-    Coordinates() {
+    public Coordinates() {
 
     }
 
     public String toString() {
-        return String.format("Coordinates(latitude=%f,longitude=%f)",
+        return String.format("weather.Coordinates(latitude=%f,longitude=%f)",
                 this.getLatitude(), this.getLongitude());
     }
     public Coordinates getGPSCoordinates(){

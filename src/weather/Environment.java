@@ -1,3 +1,5 @@
+package weather;
+
 import java.io.InputStream;
 import java.util.Properties;
 

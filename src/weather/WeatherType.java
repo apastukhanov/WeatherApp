@@ -1,3 +1,5 @@
+package weather;
+
 public enum WeatherType {
     THUNDERSTORM("Гроза"),
     DRIZZLE("Изморось"),

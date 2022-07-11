@@ -1,4 +1,5 @@
-import java.io.IOException;
+package weather;
+
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -15,7 +16,7 @@ public class HistoryPlainTextWriter implements HistoryWriter{
     private Date date;
     private String dateStampString;
 
-    HistoryPlainTextWriter (String filePath) {
+    public HistoryPlainTextWriter (String filePath) {
         this.filePath = Paths.get(filePath);
         this.date = new Date(System.currentTimeMillis());
         this.dateStampString = formatter.format(this.date);

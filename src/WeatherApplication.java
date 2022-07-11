@@ -1,6 +1,4 @@
-import java.util.Date;
-
-public class Main {
+public class WeatherApplication {
     public static void main(String[] args) {
         Coordinates coord = new Coordinates();
         coord.getGPSCoordinates();

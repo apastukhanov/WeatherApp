@@ -1,17 +1,16 @@
 import org.json.JSONObject;
 
 import java.sql.Timestamp;
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.HashMap;
 
 public class Weather {
+
     private Celsius temperature;
     private WeatherType weatherType;
     private Date sunrise;
     private Date sunset;
     private String city;
-
     private Environment env;
 
 
@@ -33,17 +32,13 @@ public class Weather {
     }
 
 
-    public void getWeather() {
-
+    public Weather getWeather() {
         Coordinates coord = new Coordinates();
         coord = coord.getGPSCoordinates();
-        System.out.println(coord);
         String respOpenWeather  = getOpenWeatherResponse(coord.getLatitude(),
                 coord.getLongitude());
-
-        System.out.println(respOpenWeather);
         Weather weather = parseOpenWeatherResponse(respOpenWeather);
-        System.out.println(weather);
+        return weather;
 
     }
 
@@ -54,7 +49,6 @@ public class Weather {
                 longitude,
                 this.env.getEnv("OPENWEATHER_API"));
 
-        System.out.println(url);
         try {
             JSONObject json =  JsonReader.readJsonFromUrl(url);
             return json.toString();
@@ -126,7 +120,23 @@ public class Weather {
                 this.sunset,
                 this.city);
     }
+    public Celsius getTemperature() {
+        return temperature;
+    }
 
+    public WeatherType getWeatherType() {
+        return weatherType;
+    }
 
+    public Date getSunrise() {
+        return sunrise;
+    }
 
+    public Date getSunset() {
+        return sunset;
+    }
+
+    public String getCity() {
+        return city;
+    }
 }

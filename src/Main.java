@@ -5,24 +5,9 @@ public class Main {
         Coordinates coord = new Coordinates();
         coord.getGPSCoordinates();
 
-        Double i = 1.5;
-
-        Environment env = new Environment();
-
-        System.out.println(env.getEnv("USE_ROUNDED_COORDS"));
-
-        Weather weather = new Weather(new Celsius(34.2),
-                WeatherType.CLEAR,
-                new Date(),
-                new Date(),
-                "lipetsk");
-
-        Celsius temp = new Celsius(34.4);
-        System.out.println(temp);
-
-        weather.getWeather();
-
-
+        Weather weather = (new Weather()).getWeather();
+        String wp = (new WeatherPrinter()).formatWeather(weather);
+        System.out.println(wp);
 
     }
 }

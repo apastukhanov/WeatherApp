@@ -17,7 +17,8 @@ public class HistoryPlainTextWriter implements HistoryWriter{
     private String dateStampString;
 
     public HistoryPlainTextWriter (String filePath) {
-        this.filePath = Paths.get(filePath);
+        Environment env = new Environment();
+        this.filePath = Paths.get(env.getEnv("PROJECT_FOLDER") + "/" + filePath);
         this.date = new Date(System.currentTimeMillis());
         this.dateStampString = formatter.format(this.date);
     }

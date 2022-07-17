@@ -6,8 +6,10 @@ public class WeatherApplication {
         coord.getGPSCoordinates();
 
         Weather weather = (new Weather()).getWeather();
-        HistoryWriter writer = new HistoryPlainTextWriter("history/historyRequests.txt");
-        writer.save(weather);
+        HistoryWriter writerPT = new HistoryPlainTextWriter("history/historyRequests.txt");
+        writerPT.save(weather);
+        HistoryWriter writerJson = new HistoryJsonWriter("history/historyRequests.json");
+        writerJson.save(weather);
         String wp = (new WeatherPrinter()).formatWeather(weather);
         System.out.println(wp);
 

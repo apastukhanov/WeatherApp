@@ -39,7 +39,7 @@ public class Weather {
 
     public Weather getWeather() {
         Coordinates coord = new Coordinates();
-        coord = coord.getGPSCoordinates();
+        coord.getGPSCoordinates();
         String respOpenWeather  = getOpenWeatherResponse(coord.getLatitude(),
                 coord.getLongitude());
         Weather weather = parseOpenWeatherResponse(respOpenWeather);

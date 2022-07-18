@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class Coordinates {
-
     private double latitude;
     private double longitude;
 
@@ -22,10 +21,10 @@ public class Coordinates {
         return String.format("weather.Coordinates(latitude=%f,longitude=%f)",
                 this.getLatitude(), this.getLongitude());
     }
-    public Coordinates getGPSCoordinates(){
+    public void getGPSCoordinates(){
         Coordinates coord = getWhereAmICoordinates();
-        return new Coordinates(latitude = coord.getLatitude(),
-                longitude = coord.getLongitude());
+        this.setLatitude(coord.latitude);
+        this.setLongitude(coord.longitude);
     };
 
     private Coordinates getWhereAmICoordinates () {
@@ -100,6 +99,12 @@ public class Coordinates {
         return longitude;
     }
 
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
 
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
 
 }

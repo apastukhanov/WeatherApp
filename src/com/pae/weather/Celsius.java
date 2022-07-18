@@ -1,4 +1,4 @@
-package weather;
+package com.pae.weather;
 
 class Celsius {
     private double celsius;

@@ -1,5 +1,8 @@
-package weather;
+package com.pae.ioUtils;
 
+import com.pae.utils.Environment;
+import com.pae.weather.Weather;
+import com.pae.weather.WeatherPrinter;
 import org.json.JSONObject;
 
 import java.io.File;
@@ -10,7 +13,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Date;
 
 public class HistoryJsonWriter implements HistoryWriter {

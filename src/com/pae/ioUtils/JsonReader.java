@@ -1,4 +1,4 @@
-package weather;
+package com.pae.ioUtils;
 
 import org.json.JSONException;
 import org.json.JSONObject;

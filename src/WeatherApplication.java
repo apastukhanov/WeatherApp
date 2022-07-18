@@ -1,4 +1,8 @@
-import weather.*;
+import com.pae.ioUtils.HistoryJsonWriter;
+import com.pae.ioUtils.HistoryPlainTextWriter;
+import com.pae.ioUtils.HistoryWriter;
+import com.pae.utils.Coordinates;
+import com.pae.weather.*;
 
 public class WeatherApplication {
     public static void main(String[] args) {

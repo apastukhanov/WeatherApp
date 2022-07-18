@@ -1,4 +1,4 @@
-package weather;
+package com.pae.utils;
 
 import java.io.InputStream;
 import java.util.Properties;
@@ -7,7 +7,7 @@ public class Environment {
     private Properties prop;
     final String propFileName = "config.properties";
 
-    Environment() {
+    public Environment() {
         initProperties();
     }
 

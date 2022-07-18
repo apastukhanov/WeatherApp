@@ -1,4 +1,4 @@
-package weather;
+package com.pae.weather;
 
 public enum WeatherType {
     THUNDERSTORM("Гроза"),

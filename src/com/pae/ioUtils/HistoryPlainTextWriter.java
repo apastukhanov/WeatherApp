@@ -1,4 +1,8 @@
-package weather;
+package com.pae.ioUtils;
+
+import com.pae.utils.Environment;
+import com.pae.weather.Weather;
+import com.pae.weather.WeatherPrinter;
 
 import java.io.IOException;
 import java.nio.file.Files;

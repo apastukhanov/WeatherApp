@@ -1,5 +1,8 @@
-package weather;
+package com.pae.weather;
 
+import com.pae.ioUtils.JsonReader;
+import com.pae.utils.Coordinates;
+import com.pae.utils.Environment;
 import org.json.JSONObject;
 
 import java.sql.Timestamp;

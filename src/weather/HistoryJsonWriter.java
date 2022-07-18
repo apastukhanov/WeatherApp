@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
@@ -31,14 +32,19 @@ public class HistoryJsonWriter implements HistoryWriter {
         JSONObject json = new JSONObject();
         File f = new File(String.valueOf(this.filePath));
         if (f.exists()) {
-            json = new JSONObject(f);
+            try {
+            byte[] bytes = Files.readAllBytes(this.filePath);
+            String fileContent = new String (bytes);
+            json = new JSONObject(fileContent);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
         }
         return json;
     }
 
     private void writeJson(JSONObject json) {
         String outputJson = json.toString();
-        System.out.println(outputJson);
         try {
             PrintWriter writer = new PrintWriter(new FileWriter(String.valueOf(this.filePath)));
             writer.write(outputJson);
@@ -50,12 +56,8 @@ public class HistoryJsonWriter implements HistoryWriter {
 
     public void save(Weather weather) {
         JSONObject json = readJson();
-        System.out.println("json after read");
-        System.out.println(json.toString());
         String outputString = (new WeatherPrinter()).formatWeather(weather);
         json.put(this.dateStampString, outputString);
-        System.out.println("json after put ->");
-        System.out.println(json.toString());
         writeJson(json);
     }
 }
